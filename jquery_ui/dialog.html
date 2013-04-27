@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Dialog</title>
+  <link type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $('#dialog').dialog({
+        autoOpen: false,
+        modal: true,
+        buttons: {
+          OK: function(){
+            $(this).dialog('close');
+          }
+        }
+      });
+      $('#open').button().click(function(){
+        $('#dialog').dialog('open');
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="dialog" title="Samle Dialog">
+    This is sample dialog
+  </div>
+  <input type="submit" id="open" value="Open" />
+</body>
+</html>
+
